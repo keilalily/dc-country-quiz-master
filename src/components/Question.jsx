@@ -1,4 +1,3 @@
-import React from "react";
 import { assets } from "../assets/assets";
 
 function Question({
@@ -44,7 +43,7 @@ function Question({
                             alt="Country flag"
                             onError={(e) => {
                                 e.target.onError = null;
-                                e.target.src = {errorImage};
+                                e.target.src = errorImage;
                             }}
                             className="w-10 h-6 object-cover mx-auto my-4"
                         />

@@ -1,10 +1,9 @@
-import { assets } from '../assets/assets';
-
 export const fetchQuestions = async () => {
     try {
         const response = await fetch('https://restcountries.com/v3.1/all?fields=name,capital,continents,flags');
+        
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Please try again.');
         }
 
         const data = await response.json();
@@ -77,6 +76,6 @@ export const fetchQuestions = async () => {
 
         return questions;
     } catch (error) {
-        throw new Error(`Failed to fetch questions: ${error.message}`);
+        throw new Error(`Failed to load quiz questions. ${error.message}`);
     }
 };
