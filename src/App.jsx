@@ -3,14 +3,16 @@ import Quiz from "./components/Quiz"
 
 function App() {
   return (
-    <div
-      className='background text-center h-screen flex items-center justify-center text-white text-2xl p-8'
+    <main
+      className='relative background w-full h-screen flex flex-col items-center justify-center p-8'
     >
-      <Congratulations 
-        score={4}
-        totalQuestions={10}
-      />
-    </div>
+      <Quiz />
+
+      <footer className='absolute bottom-4 flex flex-col items-center justify-center text-center text-primary/50 text-xs'>
+          <p>Coded by <a href="https://kylamarieangeles.vercel.app/" target="_blank" className='hover:text-primary'>Kyla Marie Angeles</a></p>
+          <p>Challenge by <a href="https://www.devchallenges.io?ref=challenge" target="_blank" className='hover:text-primary'>devChallenges.io</a>.</p>
+      </footer>
+    </main>
   )
 }
 
