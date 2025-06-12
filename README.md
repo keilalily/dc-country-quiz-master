@@ -32,26 +32,20 @@
 
 ## Overview
 
-<!-- Add a screenshot or GIF of your finished project here when done -->
-<!-- ![screenshot](./screenshot.png) -->
+![Preview](./public/desktop-preview.png)
 
 This project is a submission to the "Country Quiz" challenge on DevChallenges.io. It's built using **React.js** and **Tailwind CSS**, focusing on building a responsive and interactive quiz app based on countries and flags.
 
 ### What I learned
 
-<!-- Fill this section in after you finish the challenge -->
-<!--
-- Learned how to handle state in React for quiz logic
-- Improved responsive layout skills with Tailwind
--->
+- How to manage component state in React to handle quiz logic
+- How to fetch and process data from APIs
+- How to improve responsive design using Tailwind CSS
 
 ### Useful resources
 
-<!-- Add useful articles, docs, or tutorials here -->
-<!-- 
 - [React Docs](https://reactjs.org/docs/getting-started.html)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
--->
 
 ### Built with
 
@@ -63,21 +57,14 @@ This project is a submission to the "Country Quiz" challenge on DevChallenges.io
 
 ## Features
 
-<!-- List of features once the app is completed -->
-<!--
 - Start quiz
 - View quiz results
 - Responsive design
 - Flag and country-based questions
--->
 
 ## Acknowledgements
 
-<!-- Optional: mention any resources, icons, or help you used -->
-<!--
-- [Open Trivia DB](https://opentdb.com/) for API
 - Country flags from REST Countries API
--->
 
 ## Author
 
