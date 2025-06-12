@@ -4,7 +4,7 @@ import Quiz from "./components/Quiz"
 function App() {
   return (
     <main
-      className='relative background w-full h-screen flex flex-col items-center justify-center p-8'
+      className='relative background w-full h-screen flex flex-col items-center justify-center p-8 overflow-y-auto'
     >
       <Quiz />
 
