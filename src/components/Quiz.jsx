@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
 import { fetchQuestions } from "../api/fetchService";
-import { assets } from "../assets/assets";
 import Congratulations from "./Congratulations";
 import Question from "./Question";
 
@@ -9,13 +8,15 @@ export default function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [userAnswers, setUserAnswers] = useState([]);
     const [showResult, setShowResult] = useState(false);
+    const [error, setError] = useState(null);
 
     const getQuestions = async () => {
         try {
+            setError(null);
             const data = await fetchQuestions();
             setQuestions(data);
         } catch (error) {
-            console.error("Error fetching questions:", error);
+            setError(error.message);
         }
     }
 
@@ -37,7 +38,7 @@ export default function Quiz() {
         setUserAnswers(updatedAnswers);
         setTimeout(() => {
             handleNextQuestion();
-        }, 3000);
+        }, 1500);
     };
 
     const handleRestartQuiz = () => {
@@ -56,7 +57,17 @@ export default function Quiz() {
 
     return (
         <div className='flex flex-col items-center justify-center w-full text-primary'>
-            {showResult ? (
+            {error ? (
+                <div className='flex flex-col items-center justify-center gap-6 w-full md:w-1/2 rounded-lg bg-panel/20 p-12 shadow-lg'>
+                    <p className='text-lg text-center text-red-500'>{error}</p>
+                    <button
+                        onClick={getQuestions}
+                        className='gradient px-6 py-2 text-white rounded-lg hover:opacity-80 hover:cursor-pointer transition-colors'
+                    >
+                        Retry
+                    </button>
+                </div>
+            ) : showResult ? (
                 <Congratulations
                     score={score}
                     totalQuestions={questions.length}
