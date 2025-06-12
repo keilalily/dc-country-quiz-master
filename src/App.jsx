@@ -1,7 +1,15 @@
+import Congratulations from "./components/Congratulations"
+import Quiz from "./components/Quiz"
+
 function App() {
   return (
-    <div className='text-center bg-blue-900 h-screen flex items-center justify-center text-white text-2xl'>
-      Country Quiz Master
+    <div
+      className='background text-center h-screen flex items-center justify-center text-white text-2xl p-8'
+    >
+      <Congratulations 
+        score={4}
+        totalQuestions={10}
+      />
     </div>
   )
 }
