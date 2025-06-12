@@ -11,8 +11,8 @@ function Question({
     const errorImage = assets.errorImage;
 
     return (
-        <div className='flex flex-col rounded-lg bg-panel/20 p-6 shadow-lg w-full gap-8'>
-            <div className='flex justify-center items-center flex-wrap gap-2'>
+        <div className='flex flex-col rounded-lg bg-panel/20 py-16 px-28 shadow-lg w-full gap-8'>
+            <div className='flex justify-center items-center flex-wrap gap-4 w-full'>
                 {Array.from({ length: totalQuestions }).map((_, index) => {
                     const isCurrent = questionIndex === index;
                     const isAnswered = userAnswers[index] !== undefined;
@@ -82,7 +82,7 @@ function Question({
                         <li
                             key={index}
                             onClick={() => !hasAnswered && onSelectAnswer(questionIndex, index)}
-                            className={`flex gap-4 justify-center items-center text-center bg-panel/30 p-4 rounded-lg
+                            className={`flex gap-2 justify-center items-center text-center bg-panel/30 px-4 py-5 rounded-lg
                                 ${isSelected ? 'gradient' : ''}
                                 ${!hasAnswered ? 'hover:bg-gradient-to-r hover:from-gradient-start hover:to-gradient-end hover:cursor-pointer' : 'opacity-80 cursor-default'}
                             `}

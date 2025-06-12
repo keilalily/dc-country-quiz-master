@@ -74,7 +74,7 @@ export default function Quiz() {
                     onRestart={handleRestartQuiz}
                 />
             ) : (
-                <div className='flex flex-col items-center justify-center gap-8 w-full lg:w-1/2'>
+                <div className='flex flex-col items-center justify-center gap-8 w-full lg:w-3/5'>
                     <div className='flex justify-between items-center w-full'>
                         <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-start'>Country Quiz</h1>
                         <span className='gradient flex justify-between text-sm md:text-base w-fit items-center gap-2 rounded-full px-4 py-1'>
