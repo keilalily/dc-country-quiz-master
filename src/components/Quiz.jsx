@@ -25,9 +25,13 @@ export default function Quiz() {
     }, []);
 
     const handleNextQuestion = () => {
+        const allAnswered =
+            userAnswers.length === questions.length &&
+            userAnswers.every(answer => answer !== undefined);
+
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
-        } else {
+        } else if (allAnswered) {
             setShowResult(true);
         }
     };
@@ -36,9 +40,16 @@ export default function Quiz() {
         const updatedAnswers = [...userAnswers];
         updatedAnswers[questionIndex] = answerIndex;
         setUserAnswers(updatedAnswers);
-        setTimeout(() => {
-            handleNextQuestion();
-        }, 1500);
+
+        const allAnswered = questions.every((_, index) => updatedAnswers[index] !== undefined);
+
+        if (allAnswered) {
+            setTimeout(() => setShowResult(true), 1000);
+        } else {
+            setTimeout(() => {
+                handleNextQuestion();
+            }, 1500);
+        }
     };
 
     const handleRestartQuiz = () => {

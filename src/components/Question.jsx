@@ -39,6 +39,7 @@ function Question({
                     {question.question}
                     {question.type === "flag" && (
                         <img
+                            loading="lazy"
                             src={question.flag}
                             alt="Country flag"
                             onError={(e) => {
@@ -62,6 +63,7 @@ function Question({
                         if (isCorrectAnswer) {
                             statusIcon = (
                                 <img
+                                    loading="lazy"
                                     src={assets.check}
                                     alt="Correct"
                                     className='w-5 h-5'
@@ -70,6 +72,7 @@ function Question({
                         } else if (isSelected && !isCorrectAnswer) {
                             statusIcon = (
                                 <img
+                                    loading="lazy"
                                     src={assets.close}
                                     alt="Incorrect"
                                     className='w-5 h-5'

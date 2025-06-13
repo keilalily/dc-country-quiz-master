@@ -4,6 +4,7 @@ export default function Congratulations({ score, totalQuestions, onRestart }) {
     return (
         <div className='flex flex-col text-center items-center justify-center gap-4 p-6 pb-10 max-w-sm bg-panel/20 rounded-lg shadow-lg'>
             <img
+                loading="lazy"
                 src={assets.congrats}
                 alt="Congratulatory image"
                 className='w-full h-full'
