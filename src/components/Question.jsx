@@ -11,7 +11,7 @@ function Question({
     const errorImage = assets.errorImage;
 
     return (
-        <div className='flex flex-col rounded-lg bg-panel/20 p-6 md:p-12 xl:py-16 xl:px-28 shadow-lg w-full gap-8'>
+        <div className='flex flex-col rounded-lg bg-panel/10 p-6 md:p-12 xl:py-16 xl:px-28 shadow-lg w-full gap-8'>
             <div className='grid grid-cols-5 md:grid-cols-10 gap-4'>
                 {Array.from({ length: totalQuestions }).map((_, index) => {
                     const isCurrent = questionIndex === index;
@@ -20,8 +20,8 @@ function Question({
                     return (
                         <button
                             key={index}
-                            className={`w-10 h-10 rounded-full text-xs transition-colors cursor-pointer
-                                ${isAnswered ? 'gradient' : 'bg-panel/20'}
+                            className={`w-12 h-12 rounded-full text-sm transition-colors cursor-pointer
+                                ${isAnswered ? 'gradient' : 'bg-panel/10'}
                                 ${isCurrent ? 'gradient' : ''}
                                 hover:bg-gradient-to-r hover:from-gradient-start hover:to-gradient-end
                                 cursor-pointer
@@ -85,7 +85,7 @@ function Question({
                         <li
                             key={index}
                             onClick={() => !hasAnswered && onSelectAnswer(questionIndex, index)}
-                            className={`flex gap-2 justify-center items-center text-center bg-panel/30 px-4 py-5 rounded-lg
+                            className={`flex gap-2 justify-center items-center text-center bg-panel/10 px-4 py-5 rounded-lg
                                 ${isSelected ? 'gradient' : ''}
                                 ${!hasAnswered ? 'hover:bg-gradient-to-r hover:from-gradient-start hover:to-gradient-end hover:cursor-pointer' : 'opacity-80 cursor-default'}
                             `}
