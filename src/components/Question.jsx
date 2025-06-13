@@ -11,8 +11,8 @@ function Question({
     const errorImage = assets.errorImage;
 
     return (
-        <div className='flex flex-col rounded-lg bg-panel/20 p-6 md:py-16 md:px-28 shadow-lg w-full gap-8'>
-            <div className='flex justify-center items-center flex-wrap gap-4 w-full'>
+        <div className='flex flex-col rounded-lg bg-panel/20 p-6 md:p-12 xl:py-16 xl:px-28 shadow-lg w-full gap-8'>
+            <div className='grid grid-cols-5 md:grid-cols-10 gap-4'>
                 {Array.from({ length: totalQuestions }).map((_, index) => {
                     const isCurrent = questionIndex === index;
                     const isAnswered = userAnswers[index] !== undefined;
